@@ -6,6 +6,12 @@
 // Write a function that will display the most recent reviewers name next to the review total,
 // making sure to assign a type to the parameter, to prevent unwanted behaviour.
 
+// Boolean Types mini-challenge
+// if the last reviewer is a loyalty User, can you add a star to the end of their name?
+// please do so in the existing function, and make sure to declare what type of 
+// parameters the function takes.
+// : boolean
+
 const reviewTotalDisplay = document.querySelector('#reviews')
 
 const reviews = [
@@ -29,13 +35,10 @@ const reviews = [
     },
 ]
 
-function displayReviewTotal(value : number) {
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString()
+function displayReviewTotal(value : number, reviewer: string, loyalty: boolean) {
+    const iconDisplay = loyalty ? '🌟' : ''
+    reviewTotalDisplay.innerHTML = 
+        `review total ${value.toString()} | last reviewed by ${reviewer} ${iconDisplay}`
 }
 
-function showRecentReviewer (value: string) {
-    reviewTotalDisplay.innerHTML += ' ' + value
-}
-
-displayReviewTotal(reviews.length)
-showRecentReviewer(reviews[0].name)
+displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
