@@ -24,8 +24,8 @@ const reviews = [
     },
 ]
 
-function displayReviewsCount(a: number) {
-    reviewTotalDisplay.innerHTML = a.toString()
+function displayReviewTotal(value : number) {
+    reviewTotalDisplay.innerHTML = 'review total ' + value.toString()
 }
 
-displayReviewsCount(reviews.length)
+displayReviewTotal(reviews.length)
