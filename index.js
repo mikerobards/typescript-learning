@@ -1,13 +1,10 @@
 "use strict";
-// let age: number = 100
-// let firstName: string = 'Mike'
-// let busy: boolean = true
-exports.__esModule = true;
-exports.screen = void 0;
 // Benefits of TypeScript
 // challenges:
 // - give the screen's innerHTML a string
 // - change the two input values to numbers
+exports.__esModule = true;
+exports.screen = void 0;
 var button = document.querySelector('.button');
 var firstInput = document.querySelector('#first-input');
 var secondInput = document.querySelector('#second-input');
