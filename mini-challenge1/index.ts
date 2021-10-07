@@ -11,8 +11,10 @@
 // please do so in the existing function, and make sure to declare what type of 
 // parameters the function takes.
 // : boolean
-
+const returningUserDisplay = document.querySelector('#returning-user')
+const userNameDisplay = document.querySelector('#user')
 const reviewTotalDisplay = document.querySelector('#reviews')
+let isOpen: boolean
 
 const reviews = [
     {
@@ -35,10 +37,25 @@ const reviews = [
     },
 ]
 
-function displayReviewTotal(value : number, reviewer: string, loyalty: boolean) {
+function displayReviewTotal(value: number, reviewer: string, loyalty: boolean) {
     const iconDisplay = loyalty ? '🌟' : ''
     reviewTotalDisplay.innerHTML = 
         `review total ${value.toString()} | last reviewed by ${reviewer} ${iconDisplay}`
 }
 
 displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
+
+const you = {
+    userName: {firstName: 'Mike', lastName: 'Brown'},
+    isReturning: true,
+}
+
+
+function populateUser(isReturning: boolean, userName: string ) {
+    if (isReturning){
+        returningUserDisplay.innerHTML = 'back'
+    }
+    userNameDisplay.innerHTML = userName
+}
+
+populateUser(you.isReturning, you.userName.firstName)
