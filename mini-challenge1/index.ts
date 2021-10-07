@@ -23,3 +23,9 @@ const reviews = [
         date: '27-03-2021'
     },
 ]
+
+function displayReviewsCount(a: number) {
+    reviewTotalDisplay.innerHTML = a.toString()
+}
+
+displayReviewsCount(reviews.length)
